@@ -23,3 +23,17 @@ def analyze_dna(dna):
   )
 #dna sequence
 print(analyze_dna("ATGCct"))
+
+
+#transcription and translation
+def analyze_dna(dna):
+  dna = Seq(dna.upper())
+
+  rna = dna.transcribe()
+  protein = rna.translate()
+
+  stop_codons = protein.count("*")
+
+  return rna, protein, stop_codons
+#dna sequence
+print(analyze_dna("ATGCct"))
